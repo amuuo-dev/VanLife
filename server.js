@@ -72,7 +72,7 @@ createServer({
     this.namespace = "api";
     this.logging = false;
 
-    this.get("/vans", (schema, request) => {
+    this.get("/vans", (schema) => {
       return schema.vans.all();
     });
 
