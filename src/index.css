@@ -42,7 +42,6 @@ header a {
 }
 header a:hover {
   color: #161616;
-  text-decoration: underline;
 }
 main {
   margin-bottom: 84px;
@@ -265,4 +264,9 @@ i[class*="van-type-"] {
   color: #161616;
   text-decoration: underline;
   font-weight: 600;
+}
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #161616;
 }
