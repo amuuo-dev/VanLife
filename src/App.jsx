@@ -15,6 +15,7 @@ import HostVanInfo from "../pages/Host/HostVanInfo";
 import HostVanPhotos from "../pages/Host/HostVanPhotos";
 import HostVanPricing from "../pages/Host/HostVanPricing";
 import NotFound from "../pages/Vans/NotFound";
+import Login from "../pages/Login";
 const App = () => {
   return (
     <div>
@@ -25,6 +26,7 @@ const App = () => {
             <Route path="about" element={<About />} />
             <Route path="vans" element={<Vans />} />
             <Route path="vans/:id" element={<VanDetail />} />
+            <Route path="login" element={<Login />} />
 
             <Route path="/host" element={<HostLayout />}>
               <Route index element={<Dashboard />} />

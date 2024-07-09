@@ -1,5 +1,5 @@
 import { NavLink, Link } from "react-router-dom";
-
+import { CgProfile } from "react-icons/cg";
 const Header = () => {
   return (
     <header>
@@ -25,6 +25,9 @@ const Header = () => {
         >
           Vans
         </NavLink>
+        <Link to="login" className="login-link">
+          <CgProfile className="login-icon" />
+        </Link>
       </nav>
     </header>
   );

@@ -8,6 +8,11 @@ body {
   padding: 0;
   background-color: #fff7ed;
   font-family: "Inter", sans-serif;
+  height: 100%;
+}
+a {
+  text-decoration: unset;
+  color: unset;
 }
 body::-webkit-scrollbar {
   display: none;
@@ -20,6 +25,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 header {
   height: 110px;
@@ -42,9 +48,14 @@ header a {
 }
 header a:hover {
   color: #161616;
+  text-decoration: underline;
+}
+nav {
+  display: flex;
 }
 main {
   margin-bottom: 84px;
+  flex: 1;
 }
 footer {
   background-color: #161616;
@@ -56,6 +67,10 @@ footer {
   align-items: center;
   margin-top: auto;
   font-weight: 500;
+}
+footer a {
+  color: #115e59;
+  text-decoration: none;
 }
 .link-button {
   display: inline-block;
@@ -69,8 +84,25 @@ footer {
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
 }
+.back-button {
+  display: block;
+  color: black;
+  text-decoration: none;
+  margin-left: 26px;
+}
+.back-button span:hover {
+  text-decoration: underline;
+}
 .link-button:hover {
   transform: translate(1px, 1px);
+}
+header .login-icon {
+  height: 18px;
+  width: 18px;
+}
+header .login-link {
+  display: inline-flex;
+  align-items: center;
 }
 /*** HOME PAGE ***/
 .home-container {
@@ -107,6 +139,7 @@ footer {
   cursor: pointer;
   transition: transform 0.1s ease-in-out;
 }
+
 .home-container a:hover {
   transform: translate(1px, 1px);
 }
@@ -114,6 +147,7 @@ footer {
 .about-hero-image {
   max-width: 100%;
 }
+
 .about-page-content {
   padding-inline: 23px;
   color: #161616;
@@ -145,6 +179,13 @@ footer {
 /*** VAN PAGES ***/
 .van-list-container {
   padding-inline: 23px;
+}
+.van-list-filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+.van-list-filter-buttons > a {
+  margin-right: 15px;
 }
 .van-list {
   display: grid;
@@ -213,7 +254,7 @@ i[class*="van-type-"] {
   padding: 7px 14px;
 }
 .van-detail-container {
-  padding: 27px;
+  padding-inline: 27px;
 }
 .van-detail-container .back-button {
   color: black;
@@ -253,25 +294,7 @@ i[class*="van-type-"] {
 }
 .host-nav {
   display: flex;
-}
-.host-nav a {
-  text-decoration: none;
-  color: #4d4d4d;
-  font-weight: 500;
-  padding: 5px 20px;
-}
-.host-nav a:hover {
-  color: #161616;
-  text-decoration: underline;
-  font-weight: 600;
-}
-.active {
-  font-weight: bold;
-  text-decoration: underline;
-  color: #161616;
-}
-.host-nav {
-  display: flex;
+  margin-bottom: 30px;
 }
 .host-nav a {
   text-decoration: none;
@@ -361,22 +384,16 @@ i[class*="van-type-"] {
   text-decoration: underline;
   font-weight: 700;
 }
-.back-button {
-  display: block;
-  color: black;
-  text-decoration: none;
-  margin-top: 60px;
-  margin-left: 26px;
-}
-.back-button span:hover {
-  text-decoration: underline;
-}
 .host-van-detail-info > h4 {
   font-weight: 700;
   font-size: 14px;
   line-height: 21px;
 }
 .host-van-detail-info > h4 > span {
+  font-weight: 500;
+}
+.host-van-price {
+  font-size: 24px;
   font-weight: 500;
 }
 .host-van-price > span {
@@ -394,4 +411,43 @@ i[class*="van-type-"] {
   width: 100%;
   background-color: #161616;
   color: white;
+}
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-inline: 27px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+}
+.login-form > input {
+  border: 1px solid rgba(209, 213, 219);
+  height: 40px;
+  text-indent: 10px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  font-weight: 400;
+}
+.login-form > input:focus {
+  outline: none;
+}
+.login-form > input:first-of-type {
+  border-radius: 6px 6px 0px 0px;
+}
+.login-form > input:last-of-type {
+  border-radius: 0px 0px 6px 6px;
+  border-top: none;
+}
+.login-form > button {
+  background-color: #ff8c38;
+  border: none;
+  border-radius: 6px;
+  height: 55px;
+  margin-top: 22px;
+  color: white;
+  font-family: "Inter", sans-serif;
 }
