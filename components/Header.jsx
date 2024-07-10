@@ -1,6 +1,9 @@
 import { NavLink, Link } from "react-router-dom";
 import { CgProfile } from "react-icons/cg";
 const Header = () => {
+  // function fakeLogOut() {
+  //   localStorage.removeItem("loggedin");
+  // }
   return (
     <header>
       <Link className="site-logo" to="/">
@@ -28,6 +31,7 @@ const Header = () => {
         <Link to="login" className="login-link">
           <CgProfile className="login-icon" />
         </Link>
+        {/* <button onClick={fakeLogOut}>X</button> */}
       </nav>
     </header>
   );
