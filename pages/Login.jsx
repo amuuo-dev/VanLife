@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { loginUser } from "../api";
 const Login = () => {
   const [loginFormData, setLoginFormData] = useState({
@@ -9,14 +9,17 @@ const Login = () => {
   const [status, setStatus] = useState("idle");
   const [error, setError] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const from = location.state?.from || "/host";
 
   function handleSubmit(e) {
     e.preventDefault();
     setStatus("Submitting");
     loginUser(loginFormData)
       .then((data) => {
-        console.log(data);
         setError(null);
+        localStorage.setItem("loggedin", true);
+        navigate(from, { replace: true });
       })
       .catch((err) => {
         setError(err);
@@ -39,7 +42,7 @@ const Login = () => {
       {location.state?.message && (
         <h3 className="login-error">{location.state.message}</h3>
       )}
-      <h1>Sign in to your account</h1>
+      <p>Sign with this account: Email: b@b.com pass: p123</p>
       {error?.message && <h3 className="login-error">{error.message}</h3>}
       <form onSubmit={handleSubmit} className="login-form">
         <input
